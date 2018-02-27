@@ -9,7 +9,7 @@
             "name": "Debug Prolog Files",
             "type": "prolog",
             "request": "launch",
-            "runtimeExecutable": "C:/Program Files/swipl/bin/swipl.exe",
+            "runtimeExecutable": "C:/Program Files/swipl/bin/swipl",
             "runtimeArgs": [],
             "env": {},
             "program": "${file}",
