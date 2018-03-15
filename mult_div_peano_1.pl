@@ -33,6 +33,21 @@ mayor(s(X), s(Y)):- mayor(X, Y).
 mayor_o_igual(X, X).
 mayor_o_igual(X, Y):- mayor(X,Y).
 
+%dec2peano(Dec, Peano)
+%Es cierto cuando Peano unifica
+%con el equivalente al decimal Dec
+%ejemplo:
+%dec2peano(3, P)
+%P =s(s(s(0)))
+
+dec2peano(0, 0).
+dec2peano(Dec, s(Z)):- Dec > 0, Dec2 is Dec-1, dec2peano(Dec2, Z). 
+
+%peano2dec(Peano, Dec)
+
+peano2dec(0, 0).
+peano2dec(s(P), D2):- peano2dec(P,D), D2 is D + 1. 
+
 %divide(?X, ?Y, ?Z, ?Resto)
 %Es cierto si Z unifica con la division entera
 %de X entre Y y Resto unifica con el resto en
@@ -41,6 +56,6 @@ mayor_o_igual(X, Y):- mayor(X,Y).
 %1) P(no)
 %2) P(n-1) -> P(n)
 
-divide(X, Y, 0, X):- manor(X, Y).
-divide(X,Y,s(Z),Resto) :- mayor_o_igual(X, Y), resta(Z,Y,X2), divide(X2,Y,Z,Resto).  
+divide(X, Y, 0, X):- menor(X, Y).
+divide(X,Y,s(Z),Resto) :- mayor_o_igual(X, Y), resta(X,Y,X2), divide(X2,Y,Z,Resto).  
 
