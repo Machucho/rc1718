@@ -27,4 +27,3 @@ descomprime([(E,N),Resto], [E|R]):-
 			N2 is N - 1,
 			descomprime([(E, N2)|Resto],R).
 descomprime([(E,1)|Resto], [E|R]):- descomprime(Resto, R).
-
