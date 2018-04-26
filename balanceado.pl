@@ -15,9 +15,8 @@ balanceado(a,(_,HI,HD)):-
 %altura(+A, -N)
 %Es cierto cuando N unifica con la altura del 
 %arbol A.
-
-altura(nil,0).
-altura(A(_, HI, HD), R2):- altura(HI, RI),
-                         altura(HD, RD),
-                         R is max(RI, RD),
-                         R2 is R + 1.
+altura(nil, 0).
+altura(A(_, HI, HD), R2):-  altura(HI, RI),
+                            altura(HD, RD),
+                            R is max(RI, RD),
+                            R2 is R + 1.
